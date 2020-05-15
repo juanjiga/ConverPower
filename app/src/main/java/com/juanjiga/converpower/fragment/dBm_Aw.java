@@ -24,7 +24,6 @@ public class dBm_Aw extends Fragment {
 
     String datoEntrada="";
     String unidad = " W";
-    String signo = "";
     Double numeroEntrada, numeroSalida;
     DecimalFormat formato = new DecimalFormat("0.00");
     TextView texto, entrada, salida;
@@ -80,14 +79,6 @@ public class dBm_Aw extends Fragment {
                     }
                 }
                 if (v == tecla[10]){
-                    /*numeroEntrada = Double.parseDouble(datoEntrada);
-
-                    if (numeroEntrada > 0) signo = "-";
-                    if (numeroEntrada < 0) signo = "+";
-
-                    numeroEntrada = numeroEntrada * (-1);
-
-                    imprimEntrada();*/
                     datoEntrada = "-" + datoEntrada;
                     imprimEntrada();
                 }
@@ -102,13 +93,11 @@ public class dBm_Aw extends Fragment {
     }
 
     void imprimEntrada(){
-        entrada.setText(signo + datoEntrada);
-        texto.setText("   " + numeroEntrada);
+        entrada.setText(datoEntrada);
     }
 
     void borraEntrada(){
         datoEntrada ="";
-        signo = "";
         imprimEntrada();
     }
 
