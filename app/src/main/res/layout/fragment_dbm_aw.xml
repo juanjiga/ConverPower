@@ -9,179 +9,194 @@
 
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/texto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:text="@string/_1_mw_0_dbm"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="172dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/formula"
+        android:paddingTop="10dp"
         android:src="@drawable/dbm_a_w" />
 
-        <TextView
-            android:id="@+id/textoentrada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="36dp" />
+    <TextView
+        android:id="@+id/textoentrada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="36sp" />
 
-        <TextView
-            android:id="@+id/textosalida"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="44dp" />
+    <TextView
+        android:id="@+id/textosalida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="44sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button7"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_7"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/button8"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_8"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/button9"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_9"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button4"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_4"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/button5"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_5"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/button6"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_6"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button1"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_1"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_2"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/button3"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_3"
+                    android:textSize="22sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/buttonSigno"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_signo"
+                    android:textSize="22sp" />
+
+
+                <Button
+                    android:id="@+id/button0"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/buttonPunto"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_punto"
+                    android:textSize="22sp" />
+
+            </TableRow>
+
+        </TableLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Button
-                        android:id="@+id/button7"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="7"
-                        android:textSize="22dp" />
-
-                    <Button
-                        android:id="@+id/button8"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="8"
-                        android:textSize="22dp" />
-
-                    <Button
-                        android:id="@+id/button9"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="9"
-                        android:textSize="22dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Button
-                        android:id="@+id/button4"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="4"
-                        android:textSize="22dp" />
-
-                    <Button
-                        android:id="@+id/button5"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5"
-                        android:textSize="22dp" />
-
-                    <Button
-                        android:id="@+id/button6"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="6"
-                        android:textSize="22dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Button
-                        android:id="@+id/button1"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1"
-                        android:textSize="22dp" />
-
-                    <Button
-                        android:id="@+id/button2"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2"
-                        android:textSize="22dp" />
-
-                    <Button
-                        android:id="@+id/button3"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="3"
-                        android:textSize="22dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <Button
-                        android:id="@+id/buttonSigno"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-/+"
-                        android:textSize="33dp" />
-
-                    <Button
-                        android:id="@+id/button0"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textSize="22dp" />
-
-                    <Button
-                        android:id="@+id/buttonPunto"
-                        style="@android:style/Widget.Button.Inset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="."
-                        android:textSize="33dp" />
-
-                </TableRow>
-
-            </TableLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/buttonBorrar"
                 style="@android:style/Widget.Button.Inset"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="C"
-                android:textSize="33dp" />
+                android:text="@string/_borrar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
+            <Button
+                android:id="@+id/buttondBm"
+                style="@android:style/Widget.Button.Inset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/dbm"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/buttondBm"
-            style="@android:style/Widget.Button.Inset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="- dBm -"
-            android:textSize="33dp" />
+    </LinearLayout>
 
 </LinearLayout>

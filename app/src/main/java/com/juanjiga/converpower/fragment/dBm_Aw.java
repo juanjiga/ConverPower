@@ -52,15 +52,26 @@ public class dBm_Aw extends Fragment {
         tecla[10] = (Button) view.findViewById(R.id.buttonSigno);
         tecla[11] = (Button) view.findViewById(R.id.buttonPunto);
 
-        tecla_dBm=(Button) view.findViewById(R.id.buttondBm);
+        tecla_dBm=(Button) view.findViewById(R.id.buttondBm);               //tecla dBm
         tecla_dBm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculo_dBmaW();
+                try {
+                    numeroEntrada = Double.parseDouble(datoEntrada);
+                } catch (Exception e){
+                    mensaje("eeehhhh!!! debes indicar un número de dBm");
+                    borraSalida();
+                }
+                if (numeroEntrada > 100 || numeroEntrada < -100) {
+                    borraEntrada();
+                    borraSalida();
+                    mensaje("eeehhhh!!! los dBm deben estar entre -100 y +100");
+                }
+                else calculo_dBmaW();
             }
         });
 
-        tecla_borrar=(Button) view.findViewById(R.id.buttonBorrar);
+        tecla_borrar=(Button) view.findViewById(R.id.buttonBorrar);        //tecla Borrar
         tecla_borrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,19 +81,18 @@ public class dBm_Aw extends Fragment {
 
         for (int i=0; i<12; i++){tecla[i].setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {       //teclas 0 al 9
                 for (int i = 0; i < 10; i++) {
                     if (v == tecla[i]) {
                         datoEntrada = datoEntrada + i;
-                        numeroEntrada = Double.parseDouble(datoEntrada);
                         imprimEntrada();
                     }
                 }
-                if (v == tecla[10]){
+                if (v == tecla[10]){                                       //tecla Signo
                     datoEntrada = "-" + datoEntrada;
                     imprimEntrada();
                 }
-                if (v == tecla[11]) {
+                if (v == tecla[11]) {                                      //tecla Punto
                     datoEntrada = datoEntrada + ".";
                     imprimEntrada();
                 }
@@ -92,27 +102,28 @@ public class dBm_Aw extends Fragment {
         return view;
     }
 
-    void imprimEntrada(){
+    public void imprimEntrada(){
         entrada.setText(datoEntrada);
     }
 
-    void borraEntrada(){
+    public void borraEntrada(){
         datoEntrada ="";
         imprimEntrada();
     }
 
+    public void borraSalida(){
+        salida.setText("");
+    }
+
+    public void mensaje (String mensaje){
+        Activity activity;
+        activity = getActivity();
+        Toast toast = Toast.makeText(activity, mensaje, Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
     public void calculo_dBmaW() {
-        try {
-            //numeroEntrada = Double.parseDouble(datoEntrada);
-        } catch (Exception e) {
-            numeroEntrada = 0.0;
-            Activity activity;
-            activity = getActivity();
-            Toast toast = Toast.makeText(activity,"eeehhhh!!! debes indicar un número de dBm", Toast.LENGTH_LONG);
-            toast.show();
-        }
-        entrada.setText(""); // borra el número introducido
-        numeroSalida = Math.pow(10, (numeroEntrada - 30) / 10); //formula
+        numeroSalida = Math.pow(10, (numeroEntrada - 30) / 10);                 //formula
         cambiaUnidad();
         salida.setText(numeroEntrada + " dBm  " + formato.format(numeroSalida) + unidad);
         borraEntrada();
