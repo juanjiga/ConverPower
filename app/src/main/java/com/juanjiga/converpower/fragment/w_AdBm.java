@@ -63,8 +63,10 @@ public class w_AdBm extends Fragment {
 
                 for (int i = 0; i < 10; i++) {              //teclas del 0 al 9
                     if (v == boton[i]) {
+                        if (digito == 0)
+                            borraEntradaySalida();
                         digito ++;
-                        if (digito < 5){
+                        if (digito < 6){
                         datoEntrada = datoEntrada + i;
                         imprime();
                         }
@@ -77,9 +79,7 @@ public class w_AdBm extends Fragment {
                     imprime();
                 }
                 if (v == boton[11]){                        //tecla borrar
-                    salida.setText("");
-                    datoEntrada = "";
-                    imprime();
+                    borraEntradaySalida();
                     digito = 0;
                 }                                           //teclas unidades
                 if (v == boton[12])
@@ -101,6 +101,12 @@ public class w_AdBm extends Fragment {
 
     public void imprime(){
         entrada.setText(datoEntrada);
+    }
+
+    public void borraEntradaySalida(){
+        datoEntrada = "";
+        salida.setText("");
+        imprime();
     }
 
     public void calculador(double adaptador, String unidad){

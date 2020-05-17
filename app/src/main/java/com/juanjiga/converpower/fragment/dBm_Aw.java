@@ -60,7 +60,6 @@ public class dBm_Aw extends Fragment {
                     numeroEntrada = Double.parseDouble(datoEntrada);
                     if (numeroEntrada > 100 || numeroEntrada < -100) {
                         borraEntrada();
-                        borraSalida();
                         mensaje("Los dBm deben estar entre -100 y +100");
 
                     }
@@ -114,7 +113,7 @@ public class dBm_Aw extends Fragment {
 
     public void borraEntrada(){
         datoEntrada ="";
-        imprimEntrada();
+        entrada.setText("");
     }
 
     public void borraSalida(){
