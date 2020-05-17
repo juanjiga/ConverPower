@@ -34,7 +34,7 @@ public class dBm_Aw extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.prueba, container, false);
+        View view =inflater.inflate(R.layout.fragment_dbm_aw, container, false);
 
         texto = (TextView) view.findViewById(R.id.texto);
         entrada = (TextView) view.findViewById(R.id.textoentrada);
@@ -58,16 +58,18 @@ public class dBm_Aw extends Fragment {
             public void onClick(View v) {
                 try {
                     numeroEntrada = Double.parseDouble(datoEntrada);
-                } catch (Exception e){
-                    mensaje("eeehhhh!!! debes indicar un número de dBm");
-                    borraSalida();
+                    if (numeroEntrada > 100 || numeroEntrada < -100) {
+                        borraEntrada();
+                        borraSalida();
+                        mensaje("Los dBm deben estar entre -100 y +100");
+
+                    }
+                    else calculo_dBmaW();
                 }
-                if (numeroEntrada > 100 || numeroEntrada < -100) {
-                    borraEntrada();
-                    borraSalida();
-                    mensaje("eeehhhh!!! los dBm deben estar entre -100 y +100");
+                catch (Exception e) {
+                    mensaje("Indica un número de dBm");
                 }
-                else calculo_dBmaW();
+
             }
         });
 
@@ -89,10 +91,14 @@ public class dBm_Aw extends Fragment {
                     }
                 }
                 if (v == tecla[10]){                                       //tecla Signo
+                    if (datoEntrada.indexOf('-') == -1)
                     datoEntrada = "-" + datoEntrada;
+                    else
+                        datoEntrada = datoEntrada.replace("-", "");
                     imprimEntrada();
                 }
                 if (v == tecla[11]) {                                      //tecla Punto
+                    if (datoEntrada.indexOf('.') == -1)
                     datoEntrada = datoEntrada + ".";
                     imprimEntrada();
                 }

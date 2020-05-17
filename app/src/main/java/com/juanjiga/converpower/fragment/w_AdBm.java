@@ -1,5 +1,6 @@
 package com.juanjiga.converpower.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,14 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.juanjiga.converpower.R;
 
 import java.text.DecimalFormat;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class w_AdBm extends Fragment {
 
     public w_AdBm() {
@@ -24,6 +23,7 @@ public class w_AdBm extends Fragment {
     }
 
     String datoEntrada = "";
+    int digito = 0;
     double numeroEntrada = 0;
     double numeroSalida = 0;
     DecimalFormat formato = new DecimalFormat("0.00");
@@ -63,18 +63,25 @@ public class w_AdBm extends Fragment {
 
                 for (int i = 0; i < 10; i++) {              //teclas del 0 al 9
                     if (v == boton[i]) {
+                        digito ++;
+                        if (digito < 5){
                         datoEntrada = datoEntrada + i;
                         imprime();
+                        }
+                        else mensaje("Debes indicar la unidad");
                     }
                 }
                 if (v == boton[10]){                        //tecla del punto
+                    if (datoEntrada.indexOf('.') == -1)
                     datoEntrada = datoEntrada + ".";
                     imprime();
                 }
                 if (v == boton[11]){                        //tecla borrar
+                    salida.setText("");
                     datoEntrada = "";
                     imprime();
-                }
+                    digito = 0;
+                }                                           //teclas unidades
                 if (v == boton[12])
                     calculador(0.000000001," pW");
                 if (v == boton[13])
@@ -97,12 +104,23 @@ public class w_AdBm extends Fragment {
     }
 
     public void calculador(double adaptador, String unidad){
-        double numero = Double.parseDouble(datoEntrada);                   // entrada sin modificar para luego mostrar
-        numeroEntrada = Double.parseDouble(datoEntrada)*adaptador;         // entrada adaptada a la formula
-        numeroSalida = 10*(Math.log10(numeroEntrada));                     // formula w a dBm
-        entrada.setText("");                                               // borra el número introducido
-        datoEntrada="";                                                    // reinicia la variable
-        salida.setText(numero + unidad + "  " + formato.format(numeroSalida) + " dBm");   // muestra calculo salida
+        try {
+            double numero = Double.parseDouble(datoEntrada);                     // entrada sin modificar para luego mostrar
+            numeroEntrada = Double.parseDouble(datoEntrada) * adaptador;         // entrada adaptada a la formula
+            numeroSalida = 10 * (Math.log10(numeroEntrada));                     // formula w a dBm
+            entrada.setText(numero + unidad);                                    // número introducido mas unidad
+            salida.setText(formato.format(numeroSalida) + " dBm");               // resultado de la formula
+            digito = 0;
+        } catch (Exception e){
+            mensaje("Indica los Watios");
+        }
+    }
+
+    public void mensaje (String mensaje){
+        Activity activity;
+        activity = getActivity();
+        Toast toast = Toast.makeText(activity, mensaje, Toast.LENGTH_SHORT);
+        toast.show();
     }
 
 }

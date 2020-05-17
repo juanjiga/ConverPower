@@ -15,9 +15,10 @@
     <string name="_signo">-/+</string>
     <string name="_0">0</string>
     <string name="_punto">.</string>
-    <string name="_1_mw_0_dbm">1 mW = 0 dBm</string>
+    <string name="_1_mw_0_dbm">1 mW  =  0 dBm</string>
     <string name="formula">TODO</string>
     <string name="dbm">dBm</string>
     <string name="_borrar">C</string>
+    <string name="_0_dbm_1_mw">0 dBm  =  1 mW</string>
 
 </resources>
