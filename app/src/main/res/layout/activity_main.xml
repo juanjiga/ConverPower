@@ -12,30 +12,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        app:tabIndicatorColor="#000000"
+        app:tabIndicatorGravity="bottom"
         app:tabIndicatorHeight="5dp"
+        app:tabInlineLabel="false"
+        app:tabMode="fixed"
         app:tabSelectedTextColor="#000000"
         app:tabTextAppearance="@style/TextAppearance.AppCompat.Large"
-        app:tabTextColor="#FFFFFF">
+        app:tabTextColor="#000000"
+        app:tabUnboundedRipple="false">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_dbmaw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/icono_dbmaw_black_24dp"
-            android:text="dBm a W" />
+            android:icon="@drawable/icono_dbmaw_white_24dp"
+            android:text="@string/dbm_a_w" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_wadbm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/icono_wadbm_black_24dp"
-            android:text="W a dBm" />
+            android:text="@string/w_a_dbm" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:animationCache="false"
+        android:clickable="true"
+        android:fadeScrollbars="false"
+        android:focusable="true" />
 
 </LinearLayout>

@@ -74,8 +74,11 @@ public class w_AdBm extends Fragment {
                     }
                 }
                 if (v == boton[10]){                        //tecla del punto
+                    if (digito == 0)
+                        borraEntradaySalida();
                     if (datoEntrada.indexOf('.') == -1)
                     datoEntrada = datoEntrada + ".";
+                    digito ++;
                     imprime();
                 }
                 if (v == boton[11]){                        //tecla borrar

@@ -20,5 +20,7 @@
     <string name="dbm">dBm</string>
     <string name="_borrar">C</string>
     <string name="_0_dbm_1_mw">0 dBm  =  1 mW</string>
+    <string name="dbm_a_w">dBm a W</string>
+    <string name="w_a_dbm">W a dBm</string>
 
 </resources>
