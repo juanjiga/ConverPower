@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher_round);
 
         tabLayout=findViewById(R.id.tablayout);
         viewPager=findViewById(R.id.viewpager);
